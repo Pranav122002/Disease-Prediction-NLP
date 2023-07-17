@@ -1,30 +1,24 @@
 import numpy as np
 import pickle
 import pandas as pd
-import streamlit as st 
+import streamlit as st
 
-model = pickle.load(open('RandomForest.pickle', 'rb'))
+model = pickle.load(open("models/tfidf_trigrams_model.pkl", "rb"))
+vectorizer = pickle.load(open("vectorizers/tfidf_vectorizer.pkl", "rb"))
 
 def main():
-    st.title('Disease Prediction')
+    st.title("Disease Prediction")
 
-    with st.form(key='disease_clf_form'):
-        raw_text = st.text_area('Type Your Symptomns Here')
-        submit_text = st.form_submit_button(label='Submit')
-    
+    with st.form(key="disease_clf_form"):
+        raw_text = st.text_area("Type Your Symptoms Here")
+        submit_text = st.form_submit_button(label="Submit")
+
     if submit_text:
+        st.success("Predicted Disease : ")
 
-        col1, col2 = st.columns(2)
+        text_transformed = vectorizer.transform([raw_text])  
+        result = model.predict(text_transformed)[0]
+        st.write(result)
 
-        with col1:
-            st.success('Symptomns')
-            st.write(raw_text)
-
-        with col2:
-            st.success('Predictions')
-            
-            result = model.predict([raw_text])
-            st.write(result)
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-.ipynb_checkpoints
-RandomForest.pickle
 dataset
-
+models
+vectorizers
+.ipynb_checkpoints

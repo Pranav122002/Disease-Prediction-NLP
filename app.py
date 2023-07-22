@@ -31,6 +31,30 @@ def recommend_drug(disease):
 def main():
     st.title("Disease Prediction")
 
+    st.sidebar.markdown(
+        "The **PassiveAggressiveClassifier** is a popular algorithm for online learning tasks and is often used for binary text classification problems. It is a type of linear classifier, suitable for large-scale learning. The PassiveAggressiveClassifier model, is trained on the TF-IDF transformed training data."
+    )
+    st.sidebar.markdown(
+        "Term Frequency-Inverse Document Frequency (TF-IDF). **TfidfVectorizer** is used to convert the text data into numerical features."
+    )
+    st.sidebar.markdown(
+        "**Dataset** includes 884 diseases, but the model is trained only on 11 most common diseases as to increase the accuracy and as this diseases contains highest instances in the dataset."
+    )
+    st.sidebar.markdown(
+        "Diseases on which model is trained are:\n"
+        "- Birth Control\n"
+        "- Depression\n"
+        "- Anxiety\n"
+        "- Acne\n"
+        "- Insomnia\n"
+        "- Diabetes, Type 2\n"
+        "- High Blood Pressure\n"
+        "- Migraine\n"
+        "- Constipation\n"
+        "- Cough\n"
+        "- GERD\n"
+    )
+    
     with st.form(key="disease_clf_form"):
         raw_text = st.text_area("Type Your Symptoms Here")
         submit_text = st.form_submit_button(label="Submit")

@@ -10,7 +10,7 @@ def unzip_file(zip_path, extract_to):
         zip_ref.extractall(extract_to)
 
 
-zip_file_path = 'dataset.zip'  
+zip_file_path = 'dataset-zip.zip'  
 extraction_path = os.getcwd()  
 unzip_file(zip_file_path, extraction_path)
 

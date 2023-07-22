@@ -1,4 +1,10 @@
 dataset
-models
-vectorizers
+
 .ipynb_checkpoints
+
+models/multinomial_nb_model.pkl
+models/passive_aggressive_model.pkl
+models/tfidf_model.pkl
+models/tfidf_trigrams_model.pkl
+
+vectorizers/tfidf_vectorizer3.pkl

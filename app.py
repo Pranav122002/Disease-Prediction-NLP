@@ -3,8 +3,8 @@ import pickle
 import pandas as pd
 import streamlit as st
 
-model = pickle.load(open("models/tfidf_trigrams_model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizers/tfidf_vectorizer.pkl", "rb"))
+model = pickle.load(open("models/tfidf_bigrams_model.pkl", "rb"))
+vectorizer = pickle.load(open("vectorizers/tfidf_vectorizer2.pkl", "rb"))
 
 df = pd.read_csv('dataset/drugsComTrain_raw.csv')
 df_drug = df[(df['rating'] >= 9) & (df['usefulCount'] >= 100)].sort_values(by=['rating', 'usefulCount'], ascending=[False, False])
